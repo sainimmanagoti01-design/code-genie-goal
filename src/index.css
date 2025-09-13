@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Wellness Mental Health Platform Design System - Calming & Therapeutic Colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - Soft and calming */
+    --background: 220 15% 98%;
+    --foreground: 215 25% 15%;
 
+    /* Cards with subtle warmth */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Calming blue for wellness */
+    --primary: 220 60% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 220 50% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Gentle mint green */
+    --secondary: 160 40% 85%;
+    --secondary-foreground: 160 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones */
+    --muted: 220 15% 94%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm purple for highlights */
+    --accent: 280 50% 80%;
+    --accent-foreground: 280 40% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Wellness specific colors */
+    --wellness-calm: 200 50% 75%;
+    --wellness-happy: 50 70% 70%;
+    --wellness-sad: 240 40% 70%;
+    --wellness-anxious: 340 50% 75%;
+    --wellness-energetic: 120 50% 70%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive - Soft red */
+    --destructive: 0 60% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Borders and inputs */
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 220 60% 65%;
+
+    /* Gradients */
+    --gradient-wellness: linear-gradient(135deg, hsl(220 60% 75%), hsl(280 50% 80%));
+    --gradient-calm: linear-gradient(180deg, hsl(200 50% 95%), hsl(220 30% 95%));
+    --gradient-mood: linear-gradient(90deg, hsl(50 70% 85%), hsl(120 50% 85%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(220 60% 65% / 0.2);
+    --shadow-wellness: 0 8px 30px -12px hsl(280 50% 80% / 0.3);
+
+    /* Animation */
+    --transition-wellness: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +82,50 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with soothing colors */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 220 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 60% 70%;
+    --primary-foreground: 220 25% 8%;
+    --primary-soft: 220 40% 25%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 160 25% 20%;
+    --secondary-foreground: 160 30% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 40% 30%;
+    --accent-foreground: 280 30% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark wellness colors */
+    --wellness-calm: 200 40% 40%;
+    --wellness-happy: 50 50% 50%;
+    --wellness-sad: 240 30% 45%;
+    --wellness-anxious: 340 40% 45%;
+    --wellness-energetic: 120 40% 45%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 220 15% 92%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 220 60% 70%;
+
+    /* Dark gradients */
+    --gradient-wellness: linear-gradient(135deg, hsl(220 40% 25%), hsl(280 40% 30%));
+    --gradient-calm: linear-gradient(180deg, hsl(200 30% 15%), hsl(220 25% 12%));
+    --gradient-mood: linear-gradient(90deg, hsl(50 40% 20%), hsl(120 30% 20%));
+
+    --shadow-soft: 0 4px 20px -8px hsl(0 0% 0% / 0.4);
+    --shadow-wellness: 0 8px 30px -12px hsl(280 40% 30% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
